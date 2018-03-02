@@ -8,18 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CameraVC: CameraViewController {
 
+    
+    @IBOutlet weak var previewView: PreviewView!
+    
     override func viewDidLoad() {
+        self._previewView = previewView
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
 }
 
