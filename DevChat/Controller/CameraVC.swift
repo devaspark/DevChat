@@ -20,5 +20,14 @@ class CameraVC: CameraViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func recordBtnPressed(_ sender: UIButton) {
+        toggleMovieRecording()
+    }
+    
+    @IBAction func cameraSwitchBtnPressed(_ sender: UIButton) {
+        changeCamera()
+    }
+    
+    
 }
 

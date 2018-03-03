@@ -399,7 +399,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 	private let videoDeviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera, .builtInDualCamera],
                                                                                mediaType: .video, position: .unspecified)
     
-	@IBAction private func changeCamera(_ cameraButton: UIButton) {
+	func changeCamera() {
 		cameraButton.isEnabled = false
 		recordButton.isEnabled = false
 		photoButton.isEnabled = false
@@ -680,7 +680,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 	
 	@IBOutlet private weak var resumeButton: UIButton!
 	
-	@IBAction private func toggleMovieRecording(_ recordButton: UIButton) {
+    func toggleMovieRecording() {
 		guard let movieFileOutput = self.movieFileOutput else {
 			return
 		}
