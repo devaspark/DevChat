@@ -15,6 +15,7 @@
 		B30FA974204904640098D439 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30FA970204904640098D439 /* CameraViewController.swift */; };
 		B30FA975204904640098D439 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30FA971204904640098D439 /* PreviewView.swift */; };
 		B30FA977204904640098D439 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30FA973204904640098D439 /* PhotoCaptureDelegate.swift */; };
+		B30FA97C204B5BBA0098D439 /* CameraVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30FA97B204B5BBA0098D439 /* CameraVCDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B30FA970204904640098D439 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B30FA971204904640098D439 /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		B30FA973204904640098D439 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
+		B30FA97B204B5BBA0098D439 /* CameraVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVCDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		B30FA95D204901B70098D439 /* DevChat */ = {
 			isa = PBXGroup;
 			children = (
+				B30FA97A204B5B9B0098D439 /* Protocols */,
 				B30FA978204904C80098D439 /* View */,
 				B30FA979204904D10098D439 /* Controller */,
 				B30FA95E204901B70098D439 /* AppDelegate.swift */,
@@ -87,6 +90,14 @@
 				B30FA960204901B70098D439 /* CameraVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		B30FA97A204B5B9B0098D439 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B30FA97B204B5BBA0098D439 /* CameraVCDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 				B30FA961204901B70098D439 /* CameraVC.swift in Sources */,
 				B30FA975204904640098D439 /* PreviewView.swift in Sources */,
 				B30FA95F204901B70098D439 /* AppDelegate.swift in Sources */,
+				B30FA97C204B5BBA0098D439 /* CameraVCDelegate.swift in Sources */,
 				B30FA974204904640098D439 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

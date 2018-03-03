@@ -8,14 +8,15 @@
 
 import UIKit
 
-class CameraVC: CameraViewController {
-
-    
+class CameraVC: CameraViewController, CameraVCDelegate {
+  
     @IBOutlet weak var previewView: PreviewView!
+    @IBOutlet weak var cameraBtn: UIButton!
+    @IBOutlet weak var recordBtn: UIButton!
     
     override func viewDidLoad() {
         self._previewView = previewView
-        
+        delegate = self
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -28,6 +29,23 @@ class CameraVC: CameraViewController {
         changeCamera()
     }
     
+    
+    func shouldEnableCamera(enabled: Bool) {
+        cameraBtn.isEnabled = enabled
+    }
+    
+    func shouldEnableRecording(enabled: Bool) {
+        recordBtn.isEnabled = enabled
+    }
+    
+    func recordingHasStarted() {
+        print("Recording has started")
+    }
+    
+    func recordingReadyToStart() {
+        print("Recording ready to start")
+
+    }
     
 }
 
