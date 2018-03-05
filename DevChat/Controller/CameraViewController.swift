@@ -22,10 +22,12 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         delegate?.shouldEnableRecording(enabled: false)
 		//cameraButton.isEnabled = false
 		//recordButton.isEnabled = false
-		photoButton.isEnabled = false
+		
+        //temp disable
+        /*photoButton.isEnabled = false
 		livePhotoModeButton.isEnabled = false
         depthDataDeliveryButton.isEnabled = false
-		captureModeControl.isEnabled = false
+		captureModeControl.isEnabled = false*/
 		
 		// Set up the video preview view.
 		_previewView.session = session
