@@ -20,6 +20,7 @@
 		B30FA97E204B712A0098D439 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B30FA97D204B712A0098D439 /* GoogleService-Info.plist */; };
 		B30FA982204D04560098D439 /* RoundTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30FA981204D04560098D439 /* RoundTF.swift */; };
 		B30FA984204D07260098D439 /* RoundBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30FA983204D07260098D439 /* RoundBtn.swift */; };
+		B3E11487204E680C00DBDC52 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E11486204E680C00DBDC52 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		B30FA97D204B712A0098D439 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B30FA981204D04560098D439 /* RoundTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTF.swift; sourceTree = "<group>"; };
 		B30FA983204D07260098D439 /* RoundBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBtn.swift; sourceTree = "<group>"; };
+		B3E11486204E680C00DBDC52 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		E029A171009E84ED613C4601 /* Pods_DevChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 			children = (
 				B30FA970204904640098D439 /* CameraViewController.swift */,
 				B30FA960204901B70098D439 /* CameraVC.swift */,
+				B3E11486204E680C00DBDC52 /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				B30FA982204D04560098D439 /* RoundTF.swift in Sources */,
 				B30FA975204904640098D439 /* PreviewView.swift in Sources */,
 				B30FA95F204901B70098D439 /* AppDelegate.swift in Sources */,
+				B3E11487204E680C00DBDC52 /* LoginVC.swift in Sources */,
 				B30FA984204D07260098D439 /* RoundBtn.swift in Sources */,
 				B30FA97C204B5BBA0098D439 /* CameraVCDelegate.swift in Sources */,
 				B30FA974204904640098D439 /* CameraViewController.swift in Sources */,
@@ -415,6 +419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNPTHKY7KY;
 				INFOPLIST_FILE = DevChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rkdev.DevChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,6 +436,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNPTHKY7KY;
 				INFOPLIST_FILE = DevChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rkdev.DevChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";

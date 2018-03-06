@@ -44,6 +44,8 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Please allow use of camera for app to take pictures</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Please allow use of camera for app to record voice</string>
+	<string>Please allow use of microphone for app to record voice</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please allow use of photo library to store video</string>
 </dict>
 </plist>
