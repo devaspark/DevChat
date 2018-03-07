@@ -27,8 +27,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQX-FO-TqY" userLabel="PreviewView" customClass="PreviewView" customModule="DevChat" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGb-rV-gDy">
-                                        <rect key="frame" x="254" y="40" width="100" height="75"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGb-rV-gDy">
+                                        <rect key="frame" x="255" y="40" width="100" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="Aeg-wd-Sqm"/>
                                             <constraint firstAttribute="width" constant="100" id="qmy-Og-b2R"/>
@@ -42,6 +42,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="lGb-rV-gDy" firstAttribute="top" secondItem="DQX-FO-TqY" secondAttribute="top" constant="40" id="Nzu-gn-D73"/>
+                                    <constraint firstAttribute="trailing" secondItem="lGb-rV-gDy" secondAttribute="trailing" constant="20" id="imk-zm-fqU"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vp-ec-wVD">
@@ -91,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="-191.19999999999999" y="32.833583208395808"/>
         </scene>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="iHV-Lp-QUp">
             <objects>
-                <viewController id="k4x-3H-kwh" sceneMemberID="viewController">
+                <viewController id="k4x-3H-kwh" customClass="LoginVC" customModule="DevChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="07E-V3-iZN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,6 +198,9 @@
                                         <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="k4x-3H-kwh" eventType="touchUpInside" id="aLZ-FX-7v1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -220,6 +224,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XlQ-SB-Qx9"/>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="GYu-wW-7Vv" id="nhk-fK-qxa"/>
+                        <outlet property="passwordField" destination="37H-ep-7VK" id="NRU-Lz-ldu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EPd-3H-bCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

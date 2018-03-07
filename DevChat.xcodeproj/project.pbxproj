@@ -21,6 +21,7 @@
 		B30FA982204D04560098D439 /* RoundTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30FA981204D04560098D439 /* RoundTF.swift */; };
 		B30FA984204D07260098D439 /* RoundBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30FA983204D07260098D439 /* RoundBtn.swift */; };
 		B3E11487204E680C00DBDC52 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E11486204E680C00DBDC52 /* LoginVC.swift */; };
+		B3E1148A204E7E3800DBDC52 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E11489204E7E3800DBDC52 /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		B30FA981204D04560098D439 /* RoundTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTF.swift; sourceTree = "<group>"; };
 		B30FA983204D07260098D439 /* RoundBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBtn.swift; sourceTree = "<group>"; };
 		B3E11486204E680C00DBDC52 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		B3E11489204E7E3800DBDC52 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E029A171009E84ED613C4601 /* Pods_DevChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 		B30FA95D204901B70098D439 /* DevChat */ = {
 			isa = PBXGroup;
 			children = (
+				B3E11488204E7E2300DBDC52 /* Services */,
 				B30FA97A204B5B9B0098D439 /* Protocols */,
 				B30FA978204904C80098D439 /* View */,
 				B30FA979204904D10098D439 /* Controller */,
@@ -117,6 +120,14 @@
 				B30FA97B204B5BBA0098D439 /* CameraVCDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B3E11488204E7E2300DBDC52 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B3E11489204E7E3800DBDC52 /* AuthService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		FB8881DE88EB560907AE14C4 /* Frameworks */ = {
@@ -277,6 +288,7 @@
 				B30FA95F204901B70098D439 /* AppDelegate.swift in Sources */,
 				B3E11487204E680C00DBDC52 /* LoginVC.swift in Sources */,
 				B30FA984204D07260098D439 /* RoundBtn.swift in Sources */,
+				B3E1148A204E7E3800DBDC52 /* AuthService.swift in Sources */,
 				B30FA97C204B5BBA0098D439 /* CameraVCDelegate.swift in Sources */,
 				B30FA974204904640098D439 /* CameraViewController.swift in Sources */,
 			);
