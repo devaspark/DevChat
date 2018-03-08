@@ -26,4 +26,8 @@ protocol CameraVCDelegate {
     func shouldEnableCaptureModeControl(enabled: Bool)
     func recordingHasStarted()
     func recordingReadyToStart()
+    func videoRecordingComplete (videoURL: URL)
+    func videoRecordingFailed()
+    func snapshotTaken(snapshotData: Data)
+    func snapshotFailed()
 }

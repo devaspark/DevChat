@@ -20,8 +20,12 @@
 		B30FA97E204B712A0098D439 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B30FA97D204B712A0098D439 /* GoogleService-Info.plist */; };
 		B30FA982204D04560098D439 /* RoundTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30FA981204D04560098D439 /* RoundTF.swift */; };
 		B30FA984204D07260098D439 /* RoundBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30FA983204D07260098D439 /* RoundBtn.swift */; };
+		B37F7869204FC1F9005C7141 /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F7868204FC1F9005C7141 /* UserVC.swift */; };
+		B37F786B204FC2BE005C7141 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F786A204FC2BE005C7141 /* UserCell.swift */; };
+		B37F786D204FC6B0005C7141 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F786C204FC6B0005C7141 /* User.swift */; };
 		B3E11487204E680C00DBDC52 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E11486204E680C00DBDC52 /* LoginVC.swift */; };
 		B3E1148A204E7E3800DBDC52 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E11489204E7E3800DBDC52 /* AuthService.swift */; };
+		B3E1148C204FA96A00DBDC52 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E1148B204FA96A00DBDC52 /* DataServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +45,12 @@
 		B30FA97D204B712A0098D439 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B30FA981204D04560098D439 /* RoundTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTF.swift; sourceTree = "<group>"; };
 		B30FA983204D07260098D439 /* RoundBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBtn.swift; sourceTree = "<group>"; };
+		B37F7868204FC1F9005C7141 /* UserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVC.swift; sourceTree = "<group>"; };
+		B37F786A204FC2BE005C7141 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		B37F786C204FC6B0005C7141 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B3E11486204E680C00DBDC52 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B3E11489204E7E3800DBDC52 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		B3E1148B204FA96A00DBDC52 /* DataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
 		E029A171009E84ED613C4601 /* Pods_DevChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,6 +98,7 @@
 				B30FA967204901B70098D439 /* LaunchScreen.storyboard */,
 				B30FA97D204B712A0098D439 /* GoogleService-Info.plist */,
 				B30FA96A204901B70098D439 /* Info.plist */,
+				B37F786C204FC6B0005C7141 /* User.swift */,
 			);
 			path = DevChat;
 			sourceTree = "<group>";
@@ -100,6 +109,7 @@
 				B30FA971204904640098D439 /* PreviewView.swift */,
 				B30FA983204D07260098D439 /* RoundBtn.swift */,
 				B30FA981204D04560098D439 /* RoundTF.swift */,
+				B37F786A204FC2BE005C7141 /* UserCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -110,6 +120,7 @@
 				B30FA970204904640098D439 /* CameraViewController.swift */,
 				B30FA960204901B70098D439 /* CameraVC.swift */,
 				B3E11486204E680C00DBDC52 /* LoginVC.swift */,
+				B37F7868204FC1F9005C7141 /* UserVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -126,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				B3E11489204E7E3800DBDC52 /* AuthService.swift */,
+				B3E1148B204FA96A00DBDC52 /* DataServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -261,12 +273,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-DevChat/Pods-DevChat-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,11 +296,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B30FA977204904640098D439 /* PhotoCaptureDelegate.swift in Sources */,
+				B37F786B204FC2BE005C7141 /* UserCell.swift in Sources */,
 				B30FA961204901B70098D439 /* CameraVC.swift in Sources */,
 				B30FA982204D04560098D439 /* RoundTF.swift in Sources */,
 				B30FA975204904640098D439 /* PreviewView.swift in Sources */,
 				B30FA95F204901B70098D439 /* AppDelegate.swift in Sources */,
+				B37F786D204FC6B0005C7141 /* User.swift in Sources */,
+				B3E1148C204FA96A00DBDC52 /* DataServices.swift in Sources */,
 				B3E11487204E680C00DBDC52 /* LoginVC.swift in Sources */,
+				B37F7869204FC1F9005C7141 /* UserVC.swift in Sources */,
 				B30FA984204D07260098D439 /* RoundBtn.swift in Sources */,
 				B3E1148A204E7E3800DBDC52 /* AuthService.swift in Sources */,
 				B30FA97C204B5BBA0098D439 /* CameraVCDelegate.swift in Sources */,

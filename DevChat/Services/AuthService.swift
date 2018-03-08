@@ -29,6 +29,7 @@ class AuthService {
                                 self.handleFirebaseError(error: error! as NSError, onComplete: onComplete)
                             } else {
                                 if user?.uid != nil {
+                                    DataService.instance.saveUser(uid: user!.uid)
                                     Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                                         if error != nil {
                                             self.handleFirebaseError(error: error! as NSError, onComplete: onComplete)

@@ -788,7 +788,6 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
                 if availableVideoCodecTypes.contains(.hevc) {
                     movieFileOutput.setOutputSettings([AVVideoCodecKey: AVVideoCodecType.hevc], for: movieFileOutputConnection!)
                 }
-                print("did it get here???????")
 				// Start recording to a temporary file.
 				let outputFileName = NSUUID().uuidString
 				let outputFilePath = (NSTemporaryDirectory() as NSString).appendingPathComponent((outputFileName as NSString).appendingPathExtension("mov")!)
@@ -844,9 +843,13 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 		if error != nil {
             print("Movie file finishing error: \(String(describing: error))")
             success = (((error! as NSError).userInfo[AVErrorRecordingSuccessfullyFinishedKey] as AnyObject).boolValue)!
+            delegate?.videoRecordingFailed()
 		}
 		
 		if success {
+            
+            delegate?.videoRecordingComplete(videoURL: outputFileURL)
+            /*
 			// Check authorization status.
 			PHPhotoLibrary.requestAuthorization { status in
 				if status == .authorized {
@@ -866,8 +869,9 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 				} else {
 					cleanUp()
 				}
-			}
+			}*/
 		} else {
+            delegate?.videoRecordingFailed()
 			cleanUp()
 		}
 		
