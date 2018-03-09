@@ -23,6 +23,7 @@
 		B37F7869204FC1F9005C7141 /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F7868204FC1F9005C7141 /* UserVC.swift */; };
 		B37F786B204FC2BE005C7141 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F786A204FC2BE005C7141 /* UserCell.swift */; };
 		B37F786D204FC6B0005C7141 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F786C204FC6B0005C7141 /* User.swift */; };
+		B39E89B0205254AD0018AADF /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39E89AF205254AD0018AADF /* PageVC.swift */; };
 		B3E11487204E680C00DBDC52 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E11486204E680C00DBDC52 /* LoginVC.swift */; };
 		B3E1148A204E7E3800DBDC52 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E11489204E7E3800DBDC52 /* AuthService.swift */; };
 		B3E1148C204FA96A00DBDC52 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E1148B204FA96A00DBDC52 /* DataServices.swift */; };
@@ -48,6 +49,7 @@
 		B37F7868204FC1F9005C7141 /* UserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVC.swift; sourceTree = "<group>"; };
 		B37F786A204FC2BE005C7141 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		B37F786C204FC6B0005C7141 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B39E89AF205254AD0018AADF /* PageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
 		B3E11486204E680C00DBDC52 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B3E11489204E7E3800DBDC52 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B3E1148B204FA96A00DBDC52 /* DataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				B30FA960204901B70098D439 /* CameraVC.swift */,
 				B3E11486204E680C00DBDC52 /* LoginVC.swift */,
 				B37F7868204FC1F9005C7141 /* UserVC.swift */,
+				B39E89AF205254AD0018AADF /* PageVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B30FA977204904640098D439 /* PhotoCaptureDelegate.swift in Sources */,
+				B39E89B0205254AD0018AADF /* PageVC.swift in Sources */,
 				B37F786B204FC2BE005C7141 /* UserCell.swift in Sources */,
 				B30FA961204901B70098D439 /* CameraVC.swift in Sources */,
 				B30FA982204D04560098D439 /* RoundTF.swift in Sources */,
