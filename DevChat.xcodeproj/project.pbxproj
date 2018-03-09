@@ -24,6 +24,9 @@
 		B37F786B204FC2BE005C7141 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F786A204FC2BE005C7141 /* UserCell.swift */; };
 		B37F786D204FC6B0005C7141 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F786C204FC6B0005C7141 /* User.swift */; };
 		B39E89B0205254AD0018AADF /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39E89AF205254AD0018AADF /* PageVC.swift */; };
+		B39E89B2205263980018AADF /* MediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39E89B1205263980018AADF /* MediaCell.swift */; };
+		B39E89B4205264F10018AADF /* MediaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39E89B3205264F10018AADF /* MediaVC.swift */; };
+		B39E89B72052674D0018AADF /* MediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39E89B62052674D0018AADF /* MediaData.swift */; };
 		B3E11487204E680C00DBDC52 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E11486204E680C00DBDC52 /* LoginVC.swift */; };
 		B3E1148A204E7E3800DBDC52 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E11489204E7E3800DBDC52 /* AuthService.swift */; };
 		B3E1148C204FA96A00DBDC52 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E1148B204FA96A00DBDC52 /* DataServices.swift */; };
@@ -50,6 +53,9 @@
 		B37F786A204FC2BE005C7141 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		B37F786C204FC6B0005C7141 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B39E89AF205254AD0018AADF /* PageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
+		B39E89B1205263980018AADF /* MediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCell.swift; sourceTree = "<group>"; };
+		B39E89B3205264F10018AADF /* MediaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaVC.swift; sourceTree = "<group>"; };
+		B39E89B62052674D0018AADF /* MediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaData.swift; sourceTree = "<group>"; };
 		B3E11486204E680C00DBDC52 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B3E11489204E7E3800DBDC52 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B3E1148B204FA96A00DBDC52 /* DataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
@@ -89,6 +95,7 @@
 		B30FA95D204901B70098D439 /* DevChat */ = {
 			isa = PBXGroup;
 			children = (
+				B39E89B5205266CD0018AADF /* DataStructure */,
 				B3E11488204E7E2300DBDC52 /* Services */,
 				B30FA97A204B5B9B0098D439 /* Protocols */,
 				B30FA978204904C80098D439 /* View */,
@@ -100,7 +107,6 @@
 				B30FA967204901B70098D439 /* LaunchScreen.storyboard */,
 				B30FA97D204B712A0098D439 /* GoogleService-Info.plist */,
 				B30FA96A204901B70098D439 /* Info.plist */,
-				B37F786C204FC6B0005C7141 /* User.swift */,
 			);
 			path = DevChat;
 			sourceTree = "<group>";
@@ -112,6 +118,7 @@
 				B30FA983204D07260098D439 /* RoundBtn.swift */,
 				B30FA981204D04560098D439 /* RoundTF.swift */,
 				B37F786A204FC2BE005C7141 /* UserCell.swift */,
+				B39E89B1205263980018AADF /* MediaCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -124,6 +131,7 @@
 				B3E11486204E680C00DBDC52 /* LoginVC.swift */,
 				B37F7868204FC1F9005C7141 /* UserVC.swift */,
 				B39E89AF205254AD0018AADF /* PageVC.swift */,
+				B39E89B3205264F10018AADF /* MediaVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -134,6 +142,15 @@
 				B30FA97B204B5BBA0098D439 /* CameraVCDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B39E89B5205266CD0018AADF /* DataStructure */ = {
+			isa = PBXGroup;
+			children = (
+				B37F786C204FC6B0005C7141 /* User.swift */,
+				B39E89B62052674D0018AADF /* MediaData.swift */,
+			);
+			path = DataStructure;
 			sourceTree = "<group>";
 		};
 		B3E11488204E7E2300DBDC52 /* Services */ = {
@@ -305,13 +322,16 @@
 				B30FA982204D04560098D439 /* RoundTF.swift in Sources */,
 				B30FA975204904640098D439 /* PreviewView.swift in Sources */,
 				B30FA95F204901B70098D439 /* AppDelegate.swift in Sources */,
+				B39E89B4205264F10018AADF /* MediaVC.swift in Sources */,
 				B37F786D204FC6B0005C7141 /* User.swift in Sources */,
 				B3E1148C204FA96A00DBDC52 /* DataServices.swift in Sources */,
 				B3E11487204E680C00DBDC52 /* LoginVC.swift in Sources */,
+				B39E89B2205263980018AADF /* MediaCell.swift in Sources */,
 				B37F7869204FC1F9005C7141 /* UserVC.swift in Sources */,
 				B30FA984204D07260098D439 /* RoundBtn.swift in Sources */,
 				B3E1148A204E7E3800DBDC52 /* AuthService.swift in Sources */,
 				B30FA97C204B5BBA0098D439 /* CameraVCDelegate.swift in Sources */,
+				B39E89B72052674D0018AADF /* MediaData.swift in Sources */,
 				B30FA974204904640098D439 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

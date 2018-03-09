@@ -15,20 +15,78 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--MediaVC-->
         <scene sceneID="gUm-tk-Nx6">
             <objects>
-                <viewController storyboardIdentifier="VideoView" id="yrA-sq-IOX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoView" id="yrA-sq-IOX" customClass="MediaVC" customModule="DevChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B4O-0S-iEw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="03w-L1-e2k">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MediaCell" id="T0F-mp-7ae" customClass="MediaCell" customModule="DevChat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T0F-mp-7ae" id="qrd-gV-f4m">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="0nE-T1-3S6">
+                                                    <rect key="frame" x="20" y="4.3333333333333321" width="287" height="35"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nB9-og-a9g">
+                                                            <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="35" id="JnZ-5o-f1p"/>
+                                                                <constraint firstAttribute="height" constant="35" id="hIc-jC-e5U"/>
+                                                            </constraints>
+                                                            <state key="normal" image="video_btn"/>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TemplateUserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgq-YB-dHq">
+                                                            <rect key="frame" x="47" y="0.0" width="240" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="240" id="cah-Kr-nJJ"/>
+                                                                <constraint firstAttribute="height" constant="35" id="e01-Ux-NL3"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0nE-T1-3S6" firstAttribute="leading" secondItem="qrd-gV-f4m" secondAttribute="leading" constant="20" id="9ID-w5-UWl"/>
+                                                <constraint firstItem="0nE-T1-3S6" firstAttribute="centerY" secondItem="qrd-gV-f4m" secondAttribute="centerY" id="hqg-Rh-9p2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mediaBtn" destination="nB9-og-a9g" id="jv3-5W-aq6"/>
+                                            <outlet property="userName" destination="Cgq-YB-dHq" id="Sge-0q-cuX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XfQ-eV-QWh" firstAttribute="bottom" secondItem="03w-L1-e2k" secondAttribute="bottom" id="Ey3-vV-Jgc"/>
+                            <constraint firstItem="03w-L1-e2k" firstAttribute="top" secondItem="XfQ-eV-QWh" secondAttribute="top" id="b9W-nh-sy6"/>
+                            <constraint firstItem="03w-L1-e2k" firstAttribute="leading" secondItem="XfQ-eV-QWh" secondAttribute="leading" id="f0z-NO-e1u"/>
+                            <constraint firstItem="03w-L1-e2k" firstAttribute="trailing" secondItem="XfQ-eV-QWh" secondAttribute="trailing" id="w4W-f9-myR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XfQ-eV-QWh"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="03w-L1-e2k" id="A53-bS-DdC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWl-2O-J8K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2009" y="33"/>
+            <point key="canvasLocation" x="-1104.3478260869565" y="-738.58695652173924"/>
         </scene>
         <!--PageVC-->
         <scene sceneID="HVf-OG-VfN">
@@ -348,5 +406,6 @@
         <image name="developer_chat_icon" width="700" height="700"/>
         <image name="devslopes" width="1080" height="1349"/>
         <image name="send_snap" width="24" height="23"/>
+        <image name="video_btn" width="23" height="15"/>
     </resources>
 </document>

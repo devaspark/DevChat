@@ -11,6 +11,7 @@ import Firebase
 
 let REF_CHILD_USERS = "users"
 let REF_CHILD_PROFILE = "profile"
+let REF_CHILD_PULLREQUESTS = "pullRequests"
 
 class DataService {
 
@@ -26,6 +27,10 @@ class DataService {
     
     var usersRef: DatabaseReference {
         return mainRef.child(REF_CHILD_USERS)
+    }
+    
+    var pullReqRef: DatabaseReference {
+        return mainRef.child(REF_CHILD_PULLREQUESTS)
     }
     
     var mainStorageRef: StorageReference {
@@ -52,7 +57,7 @@ class DataService {
             uids.append(uid)
         }
         
-        var pr: Dictionary<String, Any> = ["medialUrl": mediaUrl.absoluteString, "userID": senderUID, "openCount": 0, "recipients": uids]
+        var pr: Dictionary<String, Any> = ["mediaUrl": mediaUrl.absoluteString, "userID": senderUID, "openCount": 0, "recipients": uids]
         mainRef.child("pullRequests").childByAutoId().setValue(pr)
     }
 }
