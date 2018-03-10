@@ -13,6 +13,8 @@ let REF_CHILD_USERS = "users"
 let REF_CHILD_PROFILE = "profile"
 let REF_CHILD_PULLREQUESTS = "pullRequests"
 
+typealias CompletionHandler = (_ users: [User]) -> Void
+
 class DataService {
 
     private static let _instance = DataService()
@@ -61,5 +63,53 @@ class DataService {
         mainRef.child("pullRequests").childByAutoId().setValue(pr)
     }
     
+    func getUserList(onComplete: @escaping CompletionHandler) {
+        var tempUserList = [User]()
+        DataService.instance.usersRef.observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
+            if let users = snapshot.value as? Dictionary<String, Any> {
+                for (key, value) in users {
+                    if let dict = value as? Dictionary<String, Any> {
+                        if let profile = dict["profile"] as? Dictionary<String, Any> {
+                            if let firstName = profile["firstName"] as? String {
+                                let uid = key
+                                let tempUser = User(uid: uid, firstName: firstName)
+                                tempUserList.append(tempUser)
+                            }
+                            
+                            
+                        }
+                    }
+                }
+            }
+            onComplete(tempUserList)
+        }
+        
+    }
     
+    func sendVideo(url: URL, selectedUsers: Dictionary<String, User>) {
+        let videoName = "\(NSUUID().uuidString)\(url)"
+        let ref = self.videoStorageRef.child(videoName)
+        _ = ref.putFile(from: url, metadata: nil, completion: { (metaData, err) in
+            if err != nil {
+                print("Error uploading video: \(String(describing: err?.localizedDescription))")
+            } else {
+                let downloadURL = metaData!.downloadURL()
+                self.sendMediaPullRequest(senderUID: (Auth.auth().currentUser?.uid)!, sendingTo: selectedUsers, mediaUrl: downloadURL!, textSnippet: "")
+                print("Video saved")
+            }
+        })
+    }
+    
+    func sendSnap(snap: Data, selectedUsers: Dictionary<String, User>) {
+        let snapName = "\(NSUUID().uuidString).jpg"
+        let ref = imagesStorageRef.child(snapName)
+        _ = ref.putData(snap, metadata: nil, completion: { (metaData, err) in
+            if err != nil {
+                print("Error uploading snap: \(String(describing: err?.localizedDescription))")
+            } else {
+                let downloadURL = metaData!.downloadURL()
+                DataService.instance.sendMediaPullRequest(senderUID: (Auth.auth().currentUser?.uid)!, sendingTo: selectedUsers, mediaUrl: downloadURL!, textSnippet: "")
+            }
+        })
+    }
 }

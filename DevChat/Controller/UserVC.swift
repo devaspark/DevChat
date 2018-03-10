@@ -41,25 +41,13 @@ class UserVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         navigationItem.rightBarButtonItem?.isEnabled = false
         
-        DataService.instance.usersRef.observeSingleEvent(of: .value) { (snapshot: DataSnapshot) in
-            if let users = snapshot.value as? Dictionary<String, Any> {
-                for (key, value) in users {
-                    if let dict = value as? Dictionary<String, Any> {
-                        if let profile = dict["profile"] as? Dictionary<String, Any> {
-                            if let firstName = profile["firstName"] as? String {
-                                let uid = key
-                                let tempUser = User(uid: uid, firstName: firstName)
-                                self.users.append(tempUser)
-                            }
-                            
-                            
-                        }
-                    }
-                }
-            }
+        DataService.instance.getUserList { (userList) in
+            self.users = userList
             self.tableView.reloadData()
         }
+        //getUserList()
     }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -98,38 +86,11 @@ class UserVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func sendPRBtnPressed(sender: Any){
         if let url = _videoURL {
-            let videoName = "\(NSUUID().uuidString)\(url)"
-            let ref = DataService.instance.videoStorageRef.child(videoName)
-            _ = ref.putFile(from: url, metadata: nil, completion: { (metaData, err) in
-                if err != nil {
-                    //do some error handling
-                    print("Error uploading video: \(String(describing: err?.localizedDescription))")
-                } else {
-                    let downloadURL = metaData!.downloadURL()
-                    DataService.instance.sendMediaPullRequest(senderUID: (Auth.auth().currentUser?.uid)!, sendingTo: self.selectedUsers, mediaUrl: downloadURL!, textSnippet: "Coding Today was legit!")
-                    
-                    //saved download url
-                }
-            })
-            self.dismiss(animated: true, completion: nil)
+            DataService.instance.sendVideo(url: url, selectedUsers: self.selectedUsers)
         } else if let snap = _snapData {
-            let snapName = "\(NSUUID().uuidString).jpg"
-            let ref = DataService.instance.imagesStorageRef.child(snapName)
-            _ = ref.putData(snap, metadata: nil, completion: { (metaData, err) in
-                if err != nil {
-                    //do some error handling
-                    print("Error uploading video: \(String(describing: err?.localizedDescription))")
-                } else {
-                    let downloadURL = metaData!.downloadURL()
-                    DataService.instance.sendMediaPullRequest(senderUID: (Auth.auth().currentUser?.uid)!, sendingTo: self.selectedUsers, mediaUrl: downloadURL!, textSnippet: "Coding Today was legit!")
-                    //saved download url
-                }
-            })
-            self.dismiss(animated: true, completion: nil)
+            DataService.instance.sendSnap(snap: snap, selectedUsers: self.selectedUsers)
         }
-        
-        
-        
+        self.dismiss(animated: true, completion: nil)
     }
 
 }
