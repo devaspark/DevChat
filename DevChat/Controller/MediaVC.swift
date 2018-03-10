@@ -7,20 +7,22 @@
 //
 
 import UIKit
+import AVKit
 import Firebase
 
-class MediaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MediaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, PresentVideoDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
     private var mediaMsgs = [MediaData]()
-    
+    var playerViewController: AVPlayerViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        
 
         // DataService
         DataService.instance.pullReqRef.observeSingleEvent(of: .value) { (snapshot) in
@@ -54,6 +56,7 @@ class MediaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MediaCell") as! MediaCell
         let mediaMsg = mediaMsgs[indexPath.row]
         cell.updateUI(mediaData: mediaMsg)
+        cell.presentVCDelegate = self
         return cell
     }
     
@@ -63,6 +66,12 @@ class MediaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return mediaMsgs.count
+    }
+    
+    func presentVideo(videoPlayer: AVPlayer) {
+        playerViewController = AVPlayerViewController()
+        playerViewController!.player = videoPlayer
+        self.present(playerViewController!, animated: true, completion: nil)
     }
     
 }

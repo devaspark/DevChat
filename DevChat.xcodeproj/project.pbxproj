@@ -27,6 +27,7 @@
 		B39E89B2205263980018AADF /* MediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39E89B1205263980018AADF /* MediaCell.swift */; };
 		B39E89B4205264F10018AADF /* MediaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39E89B3205264F10018AADF /* MediaVC.swift */; };
 		B39E89B72052674D0018AADF /* MediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39E89B62052674D0018AADF /* MediaData.swift */; };
+		B39E89B920534D4F0018AADF /* PresentVideoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39E89B820534D4F0018AADF /* PresentVideoDelegate.swift */; };
 		B3E11487204E680C00DBDC52 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E11486204E680C00DBDC52 /* LoginVC.swift */; };
 		B3E1148A204E7E3800DBDC52 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E11489204E7E3800DBDC52 /* AuthService.swift */; };
 		B3E1148C204FA96A00DBDC52 /* DataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E1148B204FA96A00DBDC52 /* DataServices.swift */; };
@@ -56,6 +57,7 @@
 		B39E89B1205263980018AADF /* MediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCell.swift; sourceTree = "<group>"; };
 		B39E89B3205264F10018AADF /* MediaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaVC.swift; sourceTree = "<group>"; };
 		B39E89B62052674D0018AADF /* MediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaData.swift; sourceTree = "<group>"; };
+		B39E89B820534D4F0018AADF /* PresentVideoDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentVideoDelegate.swift; sourceTree = "<group>"; };
 		B3E11486204E680C00DBDC52 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B3E11489204E7E3800DBDC52 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B3E1148B204FA96A00DBDC52 /* DataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServices.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				B30FA97B204B5BBA0098D439 /* CameraVCDelegate.swift */,
+				B39E89B820534D4F0018AADF /* PresentVideoDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				B37F786B204FC2BE005C7141 /* UserCell.swift in Sources */,
 				B30FA961204901B70098D439 /* CameraVC.swift in Sources */,
 				B30FA982204D04560098D439 /* RoundTF.swift in Sources */,
+				B39E89B920534D4F0018AADF /* PresentVideoDelegate.swift in Sources */,
 				B30FA975204904640098D439 /* PreviewView.swift in Sources */,
 				B30FA95F204901B70098D439 /* AppDelegate.swift in Sources */,
 				B39E89B4205264F10018AADF /* MediaVC.swift in Sources */,

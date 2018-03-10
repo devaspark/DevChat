@@ -60,4 +60,6 @@ class DataService {
         var pr: Dictionary<String, Any> = ["mediaUrl": mediaUrl.absoluteString, "userID": senderUID, "openCount": 0, "recipients": uids]
         mainRef.child("pullRequests").childByAutoId().setValue(pr)
     }
+    
+    
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a98-FF-1Am">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,42 +20,48 @@
             <objects>
                 <viewController storyboardIdentifier="VideoView" id="yrA-sq-IOX" customClass="MediaVC" customModule="DevChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B4O-0S-iEw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="03w-L1-e2k">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MediaCell" id="T0F-mp-7ae" customClass="MediaCell" customModule="DevChat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MediaCell" rowHeight="60" id="T0F-mp-7ae" customClass="MediaCell" customModule="DevChat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T0F-mp-7ae" id="qrd-gV-f4m">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="0nE-T1-3S6">
-                                                    <rect key="frame" x="20" y="4.3333333333333321" width="287" height="35"/>
+                                                    <rect key="frame" x="20" y="2.6666666666666679" width="297" height="55"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nB9-og-a9g">
-                                                            <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="45" height="55"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="35" id="JnZ-5o-f1p"/>
-                                                                <constraint firstAttribute="height" constant="35" id="hIc-jC-e5U"/>
+                                                                <constraint firstAttribute="width" constant="45" id="JnZ-5o-f1p"/>
+                                                                <constraint firstAttribute="height" constant="45" id="hIc-jC-e5U"/>
                                                             </constraints>
                                                             <state key="normal" image="video_btn"/>
+                                                            <connections>
+                                                                <action selector="playVideoWithSender:" destination="T0F-mp-7ae" eventType="touchUpInside" id="whk-qF-M3d"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TemplateUserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgq-YB-dHq">
-                                                            <rect key="frame" x="47" y="0.0" width="240" height="35"/>
+                                                            <rect key="frame" x="57" y="0.0" width="240" height="55"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="240" id="cah-Kr-nJJ"/>
-                                                                <constraint firstAttribute="height" constant="35" id="e01-Ux-NL3"/>
+                                                                <constraint firstAttribute="height" constant="45" id="e01-Ux-NL3"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="55" id="he6-hQ-mEX"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -101,14 +107,14 @@
             <objects>
                 <viewController storyboardIdentifier="CameraView" id="BYZ-38-t0r" customClass="CameraVC" customModule="DevChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQX-FO-TqY" userLabel="PreviewView" customClass="PreviewView" customModule="DevChat" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGb-rV-gDy">
-                                        <rect key="frame" x="294" y="40" width="100" height="75"/>
+                                        <rect key="frame" x="255" y="40" width="100" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="Aeg-wd-Sqm"/>
                                             <constraint firstAttribute="width" constant="100" id="qmy-Og-b2R"/>
@@ -130,24 +136,38 @@
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <state key="normal" title="Tap to Resume"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0Q-UP-bBe">
-                                <rect key="frame" x="157" y="631" width="100" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="1W4-rQ-ltm"/>
-                                    <constraint firstAttribute="height" constant="75" id="bfG-Cn-oS1"/>
-                                </constraints>
-                                <state key="normal" image="createsnap_btn"/>
-                                <connections>
-                                    <action selector="recordBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F0M-is-IKK"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="CsO-SV-TeW">
+                                <rect key="frame" x="71" y="642.66666666666663" width="173" height="75.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrW-aR-Sql">
+                                        <rect key="frame" x="0.0" y="12.666666666666742" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="5b9-Wu-W4u"/>
+                                            <constraint firstAttribute="height" constant="50" id="tQM-1F-EAE"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="chatwith_btn"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0Q-UP-bBe">
+                                        <rect key="frame" x="73" y="0.0" width="100" height="75.333333333333329"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="1W4-rQ-ltm"/>
+                                            <constraint firstAttribute="height" constant="75" id="bfG-Cn-oS1"/>
+                                        </constraints>
+                                        <state key="normal" image="createsnap_btn"/>
+                                        <connections>
+                                            <action selector="recordBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F0M-is-IKK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DQX-FO-TqY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4h2-fm-A3h"/>
                             <constraint firstItem="DQX-FO-TqY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4wp-o5-six"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X0Q-UP-bBe" secondAttribute="bottom" constant="30" id="Opx-m2-NNB"/>
-                            <constraint firstItem="X0Q-UP-bBe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vln-Xc-7Nl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CsO-SV-TeW" secondAttribute="bottom" constant="60" id="QE2-Cr-n0Y"/>
+                            <constraint firstItem="CsO-SV-TeW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-30" id="ZKy-RX-HLG"/>
                             <constraint firstItem="4Vp-ec-wVD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bKg-9o-Enp"/>
                             <constraint firstItem="DQX-FO-TqY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oA7-Nz-6Eb"/>
                             <constraint firstItem="4Vp-ec-wVD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ozu-oc-4HN"/>
@@ -178,18 +198,18 @@
             <objects>
                 <viewController id="k4x-3H-kwh" customClass="LoginVC" customModule="DevChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="07E-V3-iZN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="devslopes" translatesAutoresizingMaskIntoConstraints="NO" id="Vwe-AQ-iVp">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                             </imageView>
                             <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKp-UP-15t">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                                 <color key="backgroundColor" red="0.27450980392156865" green="0.59215686274509804" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="nHG-mU-PIY">
-                                <rect key="frame" x="98.333333333333329" y="172" width="217.33333333333337" height="65"/>
+                                <rect key="frame" x="79.000000000000014" y="196" width="217.33333333333337" height="65"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="developer_chat_icon" translatesAutoresizingMaskIntoConstraints="NO" id="dsj-eE-YKu">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="65"/>
@@ -200,7 +220,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DevChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNA-zo-kvv">
-                                        <rect key="frame" x="96.000000000000028" y="0.0" width="121.33333333333334" height="65"/>
+                                        <rect key="frame" x="96" y="0.0" width="121.33333333333331" height="65"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -208,7 +228,7 @@
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Email" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="GYu-wW-7Vv" customClass="RoundTF" customModule="DevChat" customModuleProvider="target">
-                                <rect key="frame" x="74" y="287" width="265" height="42"/>
+                                <rect key="frame" x="54.333333333333343" y="311" width="265" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="265" id="lit-mS-mzc"/>
                                     <constraint firstAttribute="height" constant="42" id="qwf-xG-joX"/>
@@ -232,7 +252,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="37H-ep-7VK" customClass="RoundTF" customModule="DevChat" customModuleProvider="target">
-                                <rect key="frame" x="74.666666666666686" y="349" width="265" height="42"/>
+                                <rect key="frame" x="55" y="373" width="265" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="Rdp-f3-KL1"/>
                                     <constraint firstAttribute="width" constant="265" id="mmm-TF-p73"/>
@@ -256,7 +276,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50z-pb-ntg" customClass="RoundBtn" customModule="DevChat" customModuleProvider="target">
-                                <rect key="frame" x="74.666666666666686" y="411" width="265" height="42"/>
+                                <rect key="frame" x="55" y="435" width="265" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="265" id="C1D-2y-QYa"/>
                                     <constraint firstAttribute="height" constant="42" id="fCq-sq-7pB"/>
@@ -319,18 +339,18 @@
             <objects>
                 <viewController id="hpC-7g-ptx" customClass="UserVC" customModule="DevChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4vt-Gq-La3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YaG-wq-6Xf">
-                                <rect key="frame" x="0.0" y="120" width="414" height="616"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="658"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" id="kDo-rF-ySk" customClass="UserCell" customModule="DevChat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" id="kDo-rF-ySk" customClass="UserCell" customModule="DevChat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kDo-rF-ySk" id="7Me-mo-Dq2">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TemplateUserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rc9-Dg-k90">
@@ -356,7 +376,7 @@
                                 </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Cd-id-K1L">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Fns-2H-U8H"/>
                                 </constraints>
@@ -371,7 +391,7 @@
                                 </items>
                             </navigationBar>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hMo-eT-1eu">
-                                <rect key="frame" x="0.0" y="64" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <color key="barTintColor" red="0.0" green="0.95760083200000001" blue="0.1324849843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -402,6 +422,7 @@
     </scenes>
     <resources>
         <image name="camera_icon_snap" width="29" height="24"/>
+        <image name="chatwith_btn" width="19" height="18"/>
         <image name="createsnap_btn" width="30" height="30"/>
         <image name="developer_chat_icon" width="700" height="700"/>
         <image name="devslopes" width="1080" height="1349"/>
