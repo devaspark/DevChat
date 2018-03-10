@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MediaCell" rowHeight="60" id="T0F-mp-7ae" customClass="MediaCell" customModule="DevChat" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MediaCell" rowHeight="60" id="T0F-mp-7ae" customClass="MediaCell" customModule="DevChat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T0F-mp-7ae" id="qrd-gV-f4m">
@@ -35,10 +35,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="0nE-T1-3S6">
-                                                    <rect key="frame" x="20" y="2.6666666666666679" width="297" height="55"/>
+                                                    <rect key="frame" x="20" y="7.6666666666666679" width="297" height="45"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nB9-og-a9g">
-                                                            <rect key="frame" x="0.0" y="0.0" width="45" height="55"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="45" id="JnZ-5o-f1p"/>
                                                                 <constraint firstAttribute="height" constant="45" id="hIc-jC-e5U"/>
@@ -49,7 +49,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TemplateUserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgq-YB-dHq">
-                                                            <rect key="frame" x="57" y="0.0" width="240" height="55"/>
+                                                            <rect key="frame" x="57" y="0.0" width="240" height="45"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="240" id="cah-Kr-nJJ"/>
                                                                 <constraint firstAttribute="height" constant="45" id="e01-Ux-NL3"/>
@@ -59,9 +59,6 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="55" id="he6-hQ-mEX"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -346,7 +343,7 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="658"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" id="kDo-rF-ySk" customClass="UserCell" customModule="DevChat" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" id="kDo-rF-ySk" customClass="UserCell" customModule="DevChat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kDo-rF-ySk" id="7Me-mo-Dq2">

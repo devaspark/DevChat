@@ -23,10 +23,18 @@ class MediaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Pre
         tableView.delegate = self
         tableView.dataSource = self
         
-
-        // DataService
-        DataService.instance.pullReqRef.observeSingleEvent(of: .value) { (snapshot) in
-            if let pullReqIDs = snapshot.value as? Dictionary<String, Any> {
+        DataService.instance.getMsgList { (msgList) in
+            print("This is mediaMsgs count before clear: \(self.mediaMsgs.count)")
+            print("This is msgList count: \(msgList.count)")
+            self.mediaMsgs.removeAll()
+            self.mediaMsgs = msgList
+            print("This is mediaMsgs count after clear: \(self.mediaMsgs.count)")
+            print("This is msgList count after clear: \(msgList.count)")
+            self.tableView.reloadData()
+        }
+        
+        /*DataService.instance.pullReqRef.observe(.value) { (snapshot) in
+                if let pullReqIDs = snapshot.value as? Dictionary<String, Any> {
                 for (key, value) in pullReqIDs {
                     //print(value)
                     if let dict = value as? Dictionary<String, Any> {
@@ -47,7 +55,7 @@ class MediaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Pre
                 }
             }
             self.tableView.reloadData()
-        }
+        }*/
         
         
     }

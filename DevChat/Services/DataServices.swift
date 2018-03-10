@@ -14,6 +14,8 @@ let REF_CHILD_PROFILE = "profile"
 let REF_CHILD_PULLREQUESTS = "pullRequests"
 
 typealias CompletionHandler = (_ users: [User]) -> Void
+typealias CompletionHandlerMedia = (_ mediaMsgList: [MediaData]) -> Void
+
 
 class DataService {
 
@@ -84,6 +86,31 @@ class DataService {
             onComplete(tempUserList)
         }
         
+    }
+    
+    func getMsgList(onComplete: @escaping CompletionHandlerMedia){
+        var tempMediaMsgList = [MediaData]()
+        print("this is the count beforehand: \(tempMediaMsgList.count)")
+        pullReqRef.observe(.value) { (snapshot) in
+            tempMediaMsgList.removeAll()
+            if let pullReqIDs = snapshot.value as? Dictionary<String, Any> {
+                for (_, value) in pullReqIDs {
+                    if let dict = value as? Dictionary<String, Any> {
+                        if let recipients = dict["recipients"] as? [String] {
+                            for uid in recipients {
+                                if uid == Auth.auth().currentUser?.uid {
+                                    let url = URL(string: dict["mediaUrl"] as! String)
+                                    let tempMediaMsg = MediaData(fromUID: dict["userID"] as! String, fromFirstName: "Jane", mediaURL: url!)
+                                    tempMediaMsgList.append(tempMediaMsg)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            print("this is the count after: \(tempMediaMsgList.count)")
+            onComplete(tempMediaMsgList)
+        }
     }
     
     func sendVideo(url: URL, selectedUsers: Dictionary<String, User>) {
