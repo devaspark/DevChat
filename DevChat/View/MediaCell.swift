@@ -34,7 +34,7 @@ class MediaCell: UITableViewCell {
     }
     
     func updateUI(mediaData: MediaData) {
-        userName.text = mediaData.fromFirstName
+        userName.text = "From: \(mediaData.fromFirstName)"
         _url = mediaData.mediaURL
     }
 

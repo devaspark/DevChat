@@ -24,38 +24,11 @@ class MediaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Pre
         tableView.dataSource = self
         
         DataService.instance.getMsgList { (msgList) in
-            print("This is mediaMsgs count before clear: \(self.mediaMsgs.count)")
-            print("This is msgList count: \(msgList.count)")
             self.mediaMsgs.removeAll()
             self.mediaMsgs = msgList
-            print("This is mediaMsgs count after clear: \(self.mediaMsgs.count)")
-            print("This is msgList count after clear: \(msgList.count)")
+            print(self.mediaMsgs)
             self.tableView.reloadData()
         }
-        
-        /*DataService.instance.pullReqRef.observe(.value) { (snapshot) in
-                if let pullReqIDs = snapshot.value as? Dictionary<String, Any> {
-                for (key, value) in pullReqIDs {
-                    //print(value)
-                    if let dict = value as? Dictionary<String, Any> {
-                        //print(dict)
-                        if let recipients = dict["recipients"] as? [String] {
-                            print(recipients)
-                            print("Does it get here???")
-                            for uid in recipients {
-                                if uid == Auth.auth().currentUser?.uid {
-                                    let url = URL(string: dict["mediaUrl"] as! String)
-                                    let tempMediaMsg = MediaData(fromUID: dict["userID"] as! String, fromFirstName: "Jane", mediaURL: url!)
-                                    self.mediaMsgs.append(tempMediaMsg)
-                                    print("We found a message")
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            self.tableView.reloadData()
-        }*/
         
         
     }

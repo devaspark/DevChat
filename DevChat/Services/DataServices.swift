@@ -61,7 +61,7 @@ class DataService {
             uids.append(uid)
         }
         
-        var pr: Dictionary<String, Any> = ["mediaUrl": mediaUrl.absoluteString, "userID": senderUID, "openCount": 0, "recipients": uids]
+        let pr: Dictionary<String, Any> = ["mediaUrl": mediaUrl.absoluteString, "userID": senderUID, "openCount": 0, "recipients": uids]
         mainRef.child("pullRequests").childByAutoId().setValue(pr)
     }
     
@@ -90,7 +90,6 @@ class DataService {
     
     func getMsgList(onComplete: @escaping CompletionHandlerMedia){
         var tempMediaMsgList = [MediaData]()
-        print("this is the count beforehand: \(tempMediaMsgList.count)")
         pullReqRef.observe(.value) { (snapshot) in
             tempMediaMsgList.removeAll()
             if let pullReqIDs = snapshot.value as? Dictionary<String, Any> {
@@ -100,16 +99,24 @@ class DataService {
                             for uid in recipients {
                                 if uid == Auth.auth().currentUser?.uid {
                                     let url = URL(string: dict["mediaUrl"] as! String)
-                                    let tempMediaMsg = MediaData(fromUID: dict["userID"] as! String, fromFirstName: "Jane", mediaURL: url!)
-                                    tempMediaMsgList.append(tempMediaMsg)
+                                    let fromUserRef = self.usersRef.child(uid).child(REF_CHILD_PROFILE).child("firstName")
+                                    fromUserRef.observeSingleEvent(of: .value, with: { (result) in
+                                        if let name = result.value as? String {
+                                            let tempMediaMsg = MediaData(fromUID: dict["userID"] as! String, fromFirstName: name, mediaURL: url!)
+                                            tempMediaMsgList.append(tempMediaMsg)
+                                        }
+                                        onComplete(tempMediaMsgList)
+                                    })
+                                    
+                                    
+                                    
                                 }
                             }
                         }
                     }
                 }
             }
-            print("this is the count after: \(tempMediaMsgList.count)")
-            onComplete(tempMediaMsgList)
+            
         }
     }
     
@@ -139,4 +146,10 @@ class DataService {
             }
         })
     }
+    
+    func sendMessage(message: String, selectedUsers: Dictionary<String, User>) {
+        let downloadUrl = URL(string: "none")
+        self.sendMediaPullRequest(senderUID: (Auth.auth().currentUser?.uid)!, sendingTo: selectedUsers, mediaUrl: downloadUrl!, textSnippet: message)
+    }
+    
 }

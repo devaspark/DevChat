@@ -43,6 +43,10 @@ class CameraVC: CameraViewController, CameraVCDelegate {
         resumeInterruptedSession()
     }*/
     
+    @IBAction func MessageBtnPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "MessageVC", sender: nil)
+    }
+    
     func shouldEnableCamera(enabled: Bool) {
         cameraBtn.isEnabled = enabled
     }
