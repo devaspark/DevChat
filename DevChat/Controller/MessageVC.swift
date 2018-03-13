@@ -11,6 +11,7 @@ import UIKit
 class MessageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var msgField: UITextField!
     private var users = [User]()
     private var selectedUsers = Dictionary<String, User>()
     private var _MsgString: String?
@@ -27,6 +28,7 @@ class MessageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.allowsMultipleSelection = true
         navigationItem.rightBarButtonItem?.isEnabled = false
         
         DataService.instance.getUserList { (userList) in
@@ -41,12 +43,20 @@ class MessageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func SendBtnPressed(_ sender: UIBarButtonItem) {
-        DataService.instance.sendMessage(message: _MsgString, selectedUsers: selectedUsers)
-        self.dismiss(animated: true, completion: nil)
+        
+        if let message = msgField.text, message.count > 0 {
+            DataService.instance.sendMessage(message: msgField.text!, selectedUsers: selectedUsers)
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Error No Message", message: "Please type a message before sending", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as! UserCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MsgUserCell") as! MsgUserCell
         let user = users[indexPath.row]
         cell.updateUI(user: user)
         return cell
@@ -54,14 +64,14 @@ class MessageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         navigationItem.rightBarButtonItem?.isEnabled = true
-        let cell = tableView.cellForRow(at: indexPath) as! UserCell
+        let cell = tableView.cellForRow(at: indexPath) as! MsgUserCell
         cell.checkMarked(selected: true)
         let user = users[indexPath.row]
         selectedUsers[user.uid] = user
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! UserCell
+        let cell = tableView.cellForRow(at: indexPath) as! MsgUserCell
         cell.checkMarked(selected: false)
         let user = users[indexPath.row]
         selectedUsers[user.uid] = nil

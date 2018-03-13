@@ -226,7 +226,7 @@
                                 <rect key="frame" x="0.0" y="148" width="375" height="664"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" id="6jM-2Q-4Xw">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MsgUserCell" id="6jM-2Q-4Xw" customClass="MsgUserCell" customModule="DevChat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6jM-2Q-4Xw" id="yRW-8t-CRp">
@@ -249,6 +249,9 @@
                                                 <constraint firstItem="IEm-ec-lRf" firstAttribute="centerY" secondItem="yRW-8t-CRp" secondAttribute="centerY" id="l6Y-Yb-Cau"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="firstnameLbl" destination="IEm-ec-lRf" id="Xr2-2j-tZV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -286,6 +289,7 @@
                         <viewLayoutGuide key="safeArea" id="5OJ-RC-hJf"/>
                     </view>
                     <connections>
+                        <outlet property="msgField" destination="dk0-DJ-02g" id="raS-pL-lQw"/>
                         <outlet property="tableView" destination="hwM-9t-iyc" id="WDb-mT-sWZ"/>
                     </connections>
                 </viewController>

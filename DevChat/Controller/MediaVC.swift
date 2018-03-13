@@ -10,7 +10,7 @@ import UIKit
 import AVKit
 import Firebase
 
-class MediaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, PresentVideoDelegate {
+class MediaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, PresentVideoDelegate, PresentMessageDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -38,6 +38,7 @@ class MediaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Pre
         let mediaMsg = mediaMsgs[indexPath.row]
         cell.updateUI(mediaData: mediaMsg)
         cell.presentVCDelegate = self
+        cell.presentMsgDelegate = self
         return cell
     }
     
@@ -53,6 +54,11 @@ class MediaVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Pre
         playerViewController = AVPlayerViewController()
         playerViewController!.player = videoPlayer
         self.present(playerViewController!, animated: true, completion: nil)
+    }
+    
+    func presentMessage(alert: UIAlertController) {
+        print("it went to the view controller")
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

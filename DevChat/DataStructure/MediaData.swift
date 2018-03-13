@@ -14,6 +14,7 @@ struct MediaData {
     private var _mediaURL: URL?
     private var _messageString: String?
     private var _textSnippet: String?
+    private var _isMsg: Bool?
     
     var fromUID: String {
         return _fromUID
@@ -35,10 +36,16 @@ struct MediaData {
         return _textSnippet
     }
     
-    init(fromUID: String, fromFirstName: String, mediaURL: URL) {
+    var isMsg: Bool? {
+        return _isMsg
+    }
+    
+    init(fromUID: String, fromFirstName: String, mediaURL: URL, isMsg: Bool, messageString: String) {
         _fromUID = fromUID
         _fromFirstName = fromFirstName
         _mediaURL = mediaURL
+        _isMsg = isMsg
+        _messageString = messageString
     }
     
     

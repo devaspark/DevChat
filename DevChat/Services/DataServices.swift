@@ -54,14 +54,14 @@ class DataService {
         mainRef.child(REF_CHILD_USERS).child(uid).child(REF_CHILD_PROFILE).setValue(profile)
     }
     
-    func sendMediaPullRequest(senderUID: String, sendingTo: Dictionary<String, User>, mediaUrl: URL, textSnippet: String? = ""){
+    func sendMediaPullRequest(senderUID: String, sendingTo: Dictionary<String, User>, mediaUrl: URL, textSnippet: String? = "", isMsg: Bool){
         
         var uids = [String]()
         for uid in sendingTo.keys {
             uids.append(uid)
         }
         
-        let pr: Dictionary<String, Any> = ["mediaUrl": mediaUrl.absoluteString, "userID": senderUID, "openCount": 0, "recipients": uids, "message": textSnippet]
+        let pr: Dictionary<String, Any> = ["mediaUrl": mediaUrl.absoluteString, "userID": senderUID, "openCount": 0, "recipients": uids, "message": textSnippet as Any, "isMsg": isMsg]
         mainRef.child("pullRequests").childByAutoId().setValue(pr)
     }
     
@@ -99,10 +99,12 @@ class DataService {
                             for uid in recipients {
                                 if uid == Auth.auth().currentUser?.uid {
                                     let url = URL(string: dict["mediaUrl"] as! String)
+                                    let isMessage = dict["isMsg"] as! Bool
+                                    let message = dict["message"] as! String
                                     let fromUserRef = self.usersRef.child(uid).child(REF_CHILD_PROFILE).child("firstName")
                                     fromUserRef.observeSingleEvent(of: .value, with: { (result) in
                                         if let name = result.value as? String {
-                                            let tempMediaMsg = MediaData(fromUID: dict["userID"] as! String, fromFirstName: name, mediaURL: url!)
+                                            let tempMediaMsg = MediaData(fromUID: dict["userID"] as! String, fromFirstName: name, mediaURL: url!, isMsg: isMessage, messageString: message)
                                             tempMediaMsgList.append(tempMediaMsg)
                                         }
                                         onComplete(tempMediaMsgList)
@@ -128,7 +130,7 @@ class DataService {
                 print("Error uploading video: \(String(describing: err?.localizedDescription))")
             } else {
                 let downloadURL = metaData!.downloadURL()
-                self.sendMediaPullRequest(senderUID: (Auth.auth().currentUser?.uid)!, sendingTo: selectedUsers, mediaUrl: downloadURL!, textSnippet: "")
+                self.sendMediaPullRequest(senderUID: (Auth.auth().currentUser?.uid)!, sendingTo: selectedUsers, mediaUrl: downloadURL!, textSnippet: "", isMsg: false)
                 print("Video saved")
             }
         })
@@ -142,14 +144,14 @@ class DataService {
                 print("Error uploading snap: \(String(describing: err?.localizedDescription))")
             } else {
                 let downloadURL = metaData!.downloadURL()
-                DataService.instance.sendMediaPullRequest(senderUID: (Auth.auth().currentUser?.uid)!, sendingTo: selectedUsers, mediaUrl: downloadURL!, textSnippet: "")
+                DataService.instance.sendMediaPullRequest(senderUID: (Auth.auth().currentUser?.uid)!, sendingTo: selectedUsers, mediaUrl: downloadURL!, textSnippet: "", isMsg: false)
             }
         })
     }
     
     func sendMessage(message: String, selectedUsers: Dictionary<String, User>) {
         let downloadUrl = URL(string: "none")
-        self.sendMediaPullRequest(senderUID: (Auth.auth().currentUser?.uid)!, sendingTo: selectedUsers, mediaUrl: downloadUrl!, textSnippet: message)
+        self.sendMediaPullRequest(senderUID: (Auth.auth().currentUser?.uid)!, sendingTo: selectedUsers, mediaUrl: downloadUrl!, textSnippet: message, isMsg: true)
     }
     
 }
